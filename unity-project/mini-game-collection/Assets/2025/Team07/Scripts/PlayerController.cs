@@ -39,13 +39,13 @@ namespace MiniGameCollection.Games2025.Team07
             if (playerID == 1)
             {
                 if (Input.GetKey(KeyCode.A)) movement.x = -1f;
-                if (Input.GetKey(KeyCode.D)) movement.x = 1f;
+                if (Input.GetKey(KeyCode.D) && transform.position.x < -0.5) movement.x = 1f;
                 if (Input.GetKey(KeyCode.W)) movement.y = 1f;
                 if (Input.GetKey(KeyCode.S)) movement.y = -1f;
             }
             else
             {
-                if (Input.GetKey(KeyCode.LeftArrow)) movement.x = -1f;
+                if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > 0.5) movement.x = -1f;
                 if (Input.GetKey(KeyCode.RightArrow)) movement.x = 1f;
                 if (Input.GetKey(KeyCode.UpArrow)) movement.y = 1f;
                 if (Input.GetKey(KeyCode.DownArrow)) movement.y = -1f;
