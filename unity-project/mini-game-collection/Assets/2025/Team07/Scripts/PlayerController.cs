@@ -8,13 +8,13 @@ namespace MiniGameCollection.Games2025.Team07
     public class PlayerController : MiniGameBehaviour
     {
         [Header("Player Settings")]
-        [SerializeField] private int playerID = 1;
-        [SerializeField] private float moveSpeed = 6f;
-        [SerializeField] private Rigidbody2D rb;
+        [field: SerializeField] private int playerID = 1;
+        [field: SerializeField] private float moveSpeed = 6f;
+        [field: SerializeField] private Rigidbody2D rb;
 
-        private bool canMove;
-        private bool attackOnCooldown;
-        private Vector2 movement;
+        [field: SerializeField] private bool canMove;
+        [field: SerializeField] private bool attackOnCooldown;
+        [field: SerializeField] private Vector2 movement;
 
         protected override void OnGameStart()
         {
