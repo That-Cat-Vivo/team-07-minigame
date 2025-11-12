@@ -71,5 +71,14 @@ namespace MiniGameCollection.Games2025.Team07
         }
 
         public int PlayerID() => playerID;
+        public void SetMoveSpeed(float newSpeed)
+        {
+            moveSpeed = newSpeed;
+        }
+        public float GetMoveSpeed()
+        {
+            return moveSpeed;
+        }
+
     }
 }
