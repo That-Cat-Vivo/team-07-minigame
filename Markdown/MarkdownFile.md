@@ -13,7 +13,7 @@ We are making an enhanced version of 2 player air hockey, with the most notable 
 
 Our objective statement: How can adding additional elements to an existing 2 player game change the gameplay dynamics of said game?
 
-Our focus is on competition between the players and satisfaction gained from the process of mastery our heavily skill based game. We want players to find the game fast paced and thrilling.
+Our focus is on competition between the players and satisfaction gained from the process of mastery our heavily skill based game. We want players to find the game fast paced and thrilling, with the power ups adding a whole new layer to traditional air hockey.
 
 **Detail design rationale. What do you envision? How does this support the overall project/company goal?**
     
