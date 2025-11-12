@@ -36,8 +36,7 @@ namespace MiniGameCollection.Games2025.Team07
             // Player movement
             movement = Vector2.zero;
             
-            if (playerID == 1)
-            {
+            
                 float axisX = ArcadeInput.Players[(int)playerID].AxisX;
                 float axisY = ArcadeInput.Players[(int)playerID].AxisY;
                 float movementX = axisX * Time.deltaTime * moveSpeed;
@@ -45,14 +44,8 @@ namespace MiniGameCollection.Games2025.Team07
                 Vector3 newPosition = transform.position + new Vector3(movementX, movementY, 0);
                 if (!canMove) return;
                 rb.MovePosition(newPosition);
-            }
-            else
-            {
-                if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > 0.5) movement.x = -1f;
-                if (Input.GetKey(KeyCode.RightArrow)) movement.x = 1f;
-                if (Input.GetKey(KeyCode.UpArrow)) movement.y = 1f;
-                if (Input.GetKey(KeyCode.DownArrow)) movement.y = -1f;
-            }
+            
+            
 
             movement = movement.normalized;
         }
