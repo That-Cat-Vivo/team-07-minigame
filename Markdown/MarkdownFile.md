@@ -1,7 +1,11 @@
 ﻿
 
 
-> Written with [StackEdit](https://stackedit.io/).
+Group 7 Members: 
+**Ethan Muller**
+**Jake Kielty**
+**Noah Carter**
+**Ethan Gapic-Kott**
 
 **Define the desired gameplay. What are you making?**
     
