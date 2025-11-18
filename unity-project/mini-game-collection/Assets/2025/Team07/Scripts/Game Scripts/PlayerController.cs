@@ -7,14 +7,14 @@ namespace MiniGameCollection.Games2025.Team07
 {
     public class PlayerController : MiniGameBehaviour
     {
-        [Header("Player Settings")]
-        [SerializeField] private int playerID = 1;
-        [SerializeField] private float moveSpeed = 6f;
-        [SerializeField] private Rigidbody2D rb;
+        [field: Header("Player Settings")]
+        [field: SerializeField] private int playerID = 1;
+        [field: SerializeField] private float moveSpeed = 6f;
+        [field: SerializeField] private Rigidbody2D rb;
 
-        private bool canMove;
-        private bool attackOnCooldown;
-        private Vector2 movement;
+        [field: SerializeField] private bool canMove;
+        [field: SerializeField] private bool attackOnCooldown;
+        [field: SerializeField] private Vector2 movement;
 
         protected override void OnGameStart()
         {
@@ -35,29 +35,25 @@ namespace MiniGameCollection.Games2025.Team07
 
             // Player movement
             movement = Vector2.zero;
-
-            if (playerID == 1)
-            {
-                if (Input.GetKey(KeyCode.A)) movement.x = -1f;
-                if (Input.GetKey(KeyCode.D)) movement.x = 1f;
-                if (Input.GetKey(KeyCode.W)) movement.y = 1f;
-                if (Input.GetKey(KeyCode.S)) movement.y = -1f;
-            }
-            else
-            {
-                if (Input.GetKey(KeyCode.LeftArrow)) movement.x = -1f;
-                if (Input.GetKey(KeyCode.RightArrow)) movement.x = 1f;
-                if (Input.GetKey(KeyCode.UpArrow)) movement.y = 1f;
-                if (Input.GetKey(KeyCode.DownArrow)) movement.y = -1f;
-            }
+            
+            
+                float axisX = ArcadeInput.Players[(int)playerID].AxisX;
+                float axisY = ArcadeInput.Players[(int)playerID].AxisY;
+                float movementX = axisX * Time.deltaTime * moveSpeed;
+                float movementY = axisY * Time.deltaTime * moveSpeed;
+                Vector3 newPosition = transform.position + new Vector3(movementX, movementY, 0);
+                if (!canMove) return;
+                rb.MovePosition(newPosition);
+            
+            
 
             movement = movement.normalized;
         }
 
         private void FixedUpdate()
         {
-            if (!canMove) return;
-            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            
+            
         }
 
         public void SetCanMove(bool value)
